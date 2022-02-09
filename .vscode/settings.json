@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "gnas.home.space",
+            "port": 3306,
+            "driver": "MariaDB",
+            "name": "gm_testing",
+            "database": "gm_testing",
+            "username": "pidCargo",
+            "password": "ijYenmDwYnMCb8*rJTwy"
+        }
+    ]
+}
