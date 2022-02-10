@@ -1,5 +1,5 @@
 # Environment
-config.json
+setup.sh
 
 # Binaries for programs and plugins
 *.exe

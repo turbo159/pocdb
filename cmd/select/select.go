@@ -21,12 +21,15 @@ var (
 func init() {
 	usr := os.Getenv("DB_USR")
 	pwd := os.Getenv("DB_PWD")
+	host := os.Getenv("DB_HOST")
 
-	if usr != "" && pwd != "" {
-		db, dbErr = sql.Open("mysql", fmt.Sprint(usr, ":", pwd, "@tcp(gnas.home.space:3306)/gm_testing"))
+	if usr != "" && pwd != "" && host != "" {
+		conString := fmt.Sprint(usr, ":", pwd, "@tcp(", host, ")/gm_testing")
+		log.Println("Connection: ", conString)
+		db, dbErr = sql.Open("mysql", conString)
 		ErrorCheck(dbErr)
 	} else {
-		panic("Missing DB_USR/DB_PWD")
+		panic("Missing environment variables: DB_USR, DB_PWD, DB_HOST")
 	}
 }
 
